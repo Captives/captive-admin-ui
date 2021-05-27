@@ -3,7 +3,7 @@ import Main from './Main.vue'
 
 Vue.config.productionTip = false;
 
-import AdminUI from '../packages';
+import AdminUI from '../src';
 Vue.use(AdminUI);
 
 

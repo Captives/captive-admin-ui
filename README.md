@@ -1,6 +1,6 @@
 # captive-admin-ui
 
-## 安装依赖
+### 安装依赖
 ```
 npm install
 ```
@@ -14,7 +14,7 @@ npm run serve
 ```
 npm run build
 ```
-- 进行将各个模块打包为各自的`.js`文件，样式文件也同时抽离处理为同名的`.css`
+- 将各个模块打包为各自的`.js`文件，样式文件也同时抽离处理为同名的`.css`
 ```
 npm run build_all
 ```

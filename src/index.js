@@ -1,5 +1,6 @@
-import Button from './button';
-import Input from './Input';
+import Button from '/packages/button';
+import Input from '/packages/input';
+import Fullscreen from '/packages/fullscreen';
 
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -75,11 +76,15 @@ import {
     Backtop,
     PageHeader,
     CascaderPanel,
-    // Loading,
-    // MessageBox,
-    // Message,
-    // Notification
+    Loading,
+    MessageBox,
+    Message,
+    Notification
 } from "element-ui";
+
+import locale from 'element-ui/src/locale';
+import InfiniteScroll from 'element-ui/packages/infinite-scroll/index.js';
+import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
 Pagination.name = "JrPagination";
 Dialog.name = "JrDialog";
@@ -152,14 +157,11 @@ Calendar.name = "JrCalendar";
 Backtop.name = "JrBacktop";
 PageHeader.name = "JrPageHeader";
 CascaderPanel.name = "JrCascaderPanel";
-// Loading.name = "JrLoading";
-// MessageBox.name = "JrMessageBox";
-// Message.name = "JrMessage";
-// Notification.name = "JrNotification";
 
 const components = [
     Button,
     Input,
+    Fullscreen,
     Pagination,
     Dialog,
     Autocomplete,
@@ -231,17 +233,32 @@ const components = [
     Backtop,
     PageHeader,
     CascaderPanel,
+    CollapseTransition
 ];
 
 const install = function(Vue, opts = {}) {
+    locale.use(opts.locale);
+    locale.i18n(opts.i18n);
+
     components.forEach(component => {
         Vue.component(component.name, component);
     });
+
+    Vue.use(InfiniteScroll);
+    Vue.use(Loading.directive);
 
     Vue.prototype.$ELEMENT = {
         size: opts.size || '',
         zIndex: opts.zIndex || 2000
     };
+
+    Vue.prototype.$loading = Loading.service;
+    Vue.prototype.$msgbox = MessageBox;
+    Vue.prototype.$alert = MessageBox.alert;
+    Vue.prototype.$confirm = MessageBox.confirm;
+    Vue.prototype.$prompt = MessageBox.prompt;
+    Vue.prototype.$notify = Notification;
+    Vue.prototype.$message = Message;
 }
 
 // 判断是否是直接引入文件
@@ -253,9 +270,14 @@ if (typeof window !== 'undefined' && window.Vue) {
 let library = {
     //UI库版本号
     version: '1.0.0',
+    locale: locale.use,
+    i18n: locale.i18n,
     // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
     install,
     Button,
+    Input,
+    Fullscreen,
+    InfiniteScroll
 };
 
 // 以下是具体的组件列表，供按需引入使用

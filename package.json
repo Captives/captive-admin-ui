@@ -1,20 +1,32 @@
 {
     "name": "captive-admin-ui",
-    "version": "1.0.5",
+    "version": "1.0.5-1",
     "private": false,
+    "main": "lib/captive-admin-ui.umd.js",
+    "description": "基于element-ui开发对内部UI库(测试)",
+    "files": [
+        "lib",
+        "examples",
+        "packages"
+    ],
+    "author": "seven、captives",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Captives/captive-admin-ui.git"
+    },
+    "homepage": "http://captives.github.io",
     "scripts": {
         "serve": "vue-cli-service serve",
-        "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib packages/index.js",
+        "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
         "build": "node build/build.js",
         "build_all": "node build/build.js all"
     },
-    "main": "lib/captive-admin-ui.umd.js",
-    "description": "基于element-ui开发对内部UI库(测试)",
     "keywords": [
         "admin-ui",
-        "element-ui"
+        "element-ui",
+        "vue",
+        "components"
     ],
-    "author": "seven、captives",
     "dependencies": {
         "core-js": "^3.6.5",
         "element-ui": "^2.15.1",
