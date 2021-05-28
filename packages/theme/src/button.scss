@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "./../super/common/var";
-@import "./../super/common/var.scss";
-@import "./../super/mixins/mixins";
-@import "./../super/mixins/utils";
+@import "./../../theme-chalk/src/common/var.scss";
+@import "./../../theme-chalk/src/mixins/mixins";
+@import "./../../theme-chalk/src/mixins/utils";

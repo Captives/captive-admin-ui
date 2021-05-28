@@ -69,11 +69,11 @@ themes.forEach((theme) => {
     copyDirectory(path.join(basepath, superTheme + "/src"), path.join(basepath, theme + "/super"));
 
     var isSCSS = theme !== 'theme-default';
-    var indexContent = isSCSS ? '@import "./src/base.scss";\n' : '@import "./src/base.css";\n';
+    var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
     Components.forEach(function(key) {
         if (['icon', 'option', 'option-group'].indexOf(key) > -1) return;
         var fileName = key + (isSCSS ? '.scss' : '.css');
-        indexContent += '@import "./src/' + fileName + '";\n';
+        indexContent += '@import "./' + fileName + '";\n';
         var filePath = path.resolve(basepath, theme, 'src', fileName);
         if (!fileExists(filePath)) {
             fs.writeFileSync(filePath, '', 'utf8');

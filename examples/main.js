@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Main from './Main.vue'
 
 
-//编译后的
-import "../packages/theme/lib/index.css";
-//源码
-// import "../packages/theme/src/index.scss";
+//编译后(项目使用)
+// import "../packages/theme/lib/index.css";
+
+//源码(开发时使用)
+import "../packages/theme/src/index.scss";
+
 import AdminUI from '../src';
 Vue.use(AdminUI);
-
 
 Vue.config.productionTip = false;
 new Vue({ render: h => h(Main) }).$mount('#app')

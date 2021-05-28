@@ -1,5 +1,5 @@
 <template>
-    <div ref="container" :class="{'container':true, 'fullscreen' : value}">
+    <div ref="container" :class="{'el-fullscreen':true, 'full' : value}">
         <slot></slot>
     </div>
 </template>

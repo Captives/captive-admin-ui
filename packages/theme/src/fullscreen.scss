@@ -1,9 +1,10 @@
-@import "./../super/common/var.scss";
-@import "./../super/mixins/mixins";
-.container {
+@import "./../../theme-chalk/src/common/var.scss";
+@import "./../../theme-chalk/src/mixins/mixins";
+@include b(fullscreen) {
     background: $--color-primary;
+    display: inline-block;
     padding: 0;
-    &.fullscreen {
+    &.full {
         padding: 50px;
         transition: all 0.2s;
     }
