@@ -1,5 +1,5 @@
 .container {
-    background: red;
+    background: $--color-primary;
     &.fullscreen {
         padding: 50px;
     }

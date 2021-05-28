@@ -18,10 +18,10 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
-        "build": "node build/build.js",
-        "build_all": "node build/build.js all",
-        "dist": "webpack --config build/webpack.conf.js && webpack --config build/webpack.component.js",
-        "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk"
+        "build": "webpack --config build/webpack.conf.js",
+        "build:all": "webpack --config build/webpack.component.js",
+        "build:theme": "",
+        "dist": "npm run build && npm run build_all && npm run build:theme"
     },
     "keywords": [
         "admin-ui",
