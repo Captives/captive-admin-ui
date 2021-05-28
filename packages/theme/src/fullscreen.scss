@@ -1,0 +1,10 @@
+@import "./../super/common/var.scss";
+@import "./../super/mixins/mixins";
+.container {
+    background: $--color-primary;
+    padding: 0;
+    &.fullscreen {
+        padding: 50px;
+        transition: all 0.2s;
+    }
+}

@@ -13,7 +13,17 @@
             <jr-button type="info">信息按钮</jr-button>
             <jr-button type="warning" @click.native="changeHandler(true)">全屏</jr-button>
         </div>
-        <VueForm style="width:480px; margin:0 auto"></VueForm>
+
+        <div class="top20">
+            <jr-button r-button icon="el-icon-search" circle>
+            </jr-button>
+            <jr-button type="primary" icon="el-icon-edit" circle></jr-button>
+            <jr-button type="success" icon="el-icon-check" circle></jr-button>
+            <jr-button type="info" icon="el-icon-message" circle></jr-button>
+            <jr-button type="warning" icon="el-icon-star-off" circle></jr-button>
+            <jr-button type="danger" icon="el-icon-delete" circle></jr-button>
+        </div>
+        <VueForm></VueForm>
     </div>
 </template>
 
@@ -47,14 +57,9 @@ export default {
     width: 720px;
     height: 380px;
     display: inline-block;
-    .el-button {
-        position: absolute;
-        bottom: 50px;
-        left: 10px;
-    }
     iframe {
         outline: none;
-        border: 1px solid orange;
+        border: none;
         box-sizing: content-box;
         width: 100%;
         height: 100%;

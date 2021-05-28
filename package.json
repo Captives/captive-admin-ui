@@ -20,7 +20,7 @@
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
         "build": "webpack --config build/webpack.conf.js",
         "build:all": "webpack --config build/webpack.component.js",
-        "build:theme": "",
+        "build:theme": "node build/create-cssfile",
         "dist": "npm run build && npm run build_all && npm run build:theme"
     },
     "keywords": [
@@ -37,10 +37,15 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
+        "element-theme-chalk": "git+https://github.com/ElementUI/theme-chalk.git",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-cssmin": "^0.2.0",
+        "gulp-sass": "^4.1.0",
         "progress-bar-webpack-plugin": "^2.1.0",
-        "terser-webpack-plugin": "^5.1.2",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",
+        "terser-webpack-plugin": "^5.1.2",
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.11",
         "webpack-cli": "^4.7.0"

@@ -95,3 +95,10 @@ export default {
     },
 };
 </script>
+<style lang="scss" scoped>
+.demo-ruleForm {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+</style>
