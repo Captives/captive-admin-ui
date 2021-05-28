@@ -1,5 +1,6 @@
 # captive-admin-ui
 
+## 安装
 ### 安装依赖
 ```
 npm install
@@ -15,6 +16,9 @@ git clone https://github.com/ElementUI/theme-chalk
 ```
 npm run serve
 ```
+
+
+## 部署
 
 ### 打包
 - 将各个模块打包为各自的`.js`文件; 如果有样式文件引入， 则也同时抽离出来，并处理为同名的`.css`
@@ -36,7 +40,17 @@ npm run build:theme
 npm run dist
 ```
 
-
 # publish NPM
-- npm pack
-- npm publish
+- 发布代码到`npmjs.com`
+```
+npm pack    # 打包
+npm publish     # 发布
+```
+
+## 作业
+
+### 组件
+新建一个组件到步骤
+- 在`packages`目录下新建组件名的目录，并同时创建`index.js`和`src`子目录
+- 在项目根目录下`components.json`内定义组件
+- 在根目录下的`src/index.js`入口处，注册组件

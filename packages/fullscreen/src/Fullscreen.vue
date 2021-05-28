@@ -70,7 +70,7 @@ export default {
             return document.fullscreenElement || document.mozFullScreenElement || document.msFullScreenElement || document.webkitFullscreenElement || null;
         },
     },
-    created() {
+    mounted() {
         document.addEventListener("fullscreenchange", (event) => {
             this.$emit("input", this.isFullScreen());
             this.$emit("change", this.isFullScreen());
