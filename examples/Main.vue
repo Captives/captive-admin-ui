@@ -23,7 +23,7 @@
             <jr-button type="warning" icon="el-icon-star-off" circle></jr-button>
             <jr-button type="danger" icon="el-icon-delete" circle></jr-button>
         </div>
-        <VueForm></VueForm>
+        <!-- <VueForm></VueForm> -->
     </div>
 </template>
 

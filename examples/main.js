@@ -8,8 +8,17 @@ import Main from './Main.vue'
 //源码(开发时使用)
 import "../packages/theme/src/index.scss";
 
+//全体注册
+// import AdminUI from '../src';
+// Vue.use(AdminUI);
+
+
+//按需引用
 import AdminUI from '../src';
-Vue.use(AdminUI);
+const { Button, Fullscreen } = AdminUI;
+console.log(Button);
+Vue.component(Button.name, Button);
+Vue.component(Fullscreen.name, Fullscreen);
 
 Vue.config.productionTip = false;
 new Vue({ render: h => h(Main) }).$mount('#app')

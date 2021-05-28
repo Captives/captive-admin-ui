@@ -280,7 +280,7 @@ let library = {
 
 // 以下是具体的组件列表，供按需引入使用
 components.forEach(component => {
-    library[component.name] = component.name;
+    library[component.name] = component;
 });
 
 console.log('library', library);
