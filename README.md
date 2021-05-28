@@ -14,16 +14,21 @@ npm run serve
 ```
 npm run build
 ```
-- 将各个模块打包为各自的`.js`文件，样式文件也同时抽离处理为同名的`.css`
+- 将各个模块打包为各自的`.js`文件; 如果有样式文件引入， 则也同时抽离出来，并处理为同名的`.css`
 ```
-npm run build_all
+npm run build:all
 ```
-- 将所有的功能打包为`index.js`和`index.css`
+- 将所有的功能打包为`index.js`; 如果有样式文件引入或使用，则抽离出来放置到`index.css`
 
+```
+npm run build:theme
+```
+发布主题包到lib下
 
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+npm run dist
+```
+同时执行以上步骤，发布文件
 
 
 # publish NPM
