@@ -21,7 +21,7 @@
         "build": "webpack --config build/webpack.conf.js",
         "build:all": "webpack --config build/webpack.component.js",
         "build:theme": "node build/create-cssfile",
-        "dist": "npm run build && npm run build_all && npm run build:theme"
+        "dist": "npm run lib && npm run build && npm run build:all && npm run build:theme"
     },
     "keywords": [
         "admin-ui",
