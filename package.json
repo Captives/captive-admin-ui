@@ -5,8 +5,8 @@
     "main": "lib/captive-admin-ui.umd.js",
     "description": "基于element-ui开发对内部UI库(测试)",
     "files": [
+        "src",
         "lib",
-        "examples",
         "packages"
     ],
     "author": "seven、captives",
@@ -20,7 +20,7 @@
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
         "build": "webpack --config build/webpack.conf.js",
         "build:all": "webpack --config build/webpack.component.js",
-        "build:theme": "node build/create-cssfile",
+        "build:theme": "node build/cssfile.js",
         "dist": "npm run lib && npm run build && npm run build:all && npm run build:theme"
     },
     "keywords": [
@@ -37,7 +37,7 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
-        "element-theme-chalk": "git+https://github.com/ElementUI/theme-chalk.git",
+        "element-theme-chalk": "git clone https://github.com/ElementUI/theme-chalk.git",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
         "gulp-cssmin": "^0.2.0",

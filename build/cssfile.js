@@ -5,6 +5,7 @@ const basepath = path.resolve(__dirname, './../packages/');
 var Components = require('./../components.json');
 
 const superTheme = "theme-chalk";
+console.time();
 
 function copyDirectory(src, dest) {
     if (fs.existsSync(dest) == false) {
@@ -15,7 +16,6 @@ function copyDirectory(src, dest) {
         return false;
     }
 
-    console.log("src:" + src + ", dest:" + dest);
     // 拷贝新的内容进去
     var dirs = fs.readdirSync(src);
     dirs.forEach(function(item) {
@@ -67,15 +67,15 @@ function fileExists(filePath) {
 themes.forEach((theme) => {
     //拷贝主题模板
     copyDirectory(path.join(basepath, superTheme + "/src"), path.join(basepath, theme + "/super"));
-    // delFile(path.join(basepath, theme + "/super/index.scss"));
+    delFile(path.join(basepath, theme + "/super/index.scss"));
 
-    var isSCSS = theme !== 'theme-default';
-    var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
+    const isSCSS = theme !== 'theme-default';
+    let indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
     Components.forEach(function(key) {
         if (['icon', 'option', 'option-group'].indexOf(key) > -1) return;
-        var fileName = key + (isSCSS ? '.scss' : '.css');
+        const fileName = key + (isSCSS ? '.scss' : '.css');
         indexContent += '@import "./' + fileName + '";\n';
-        var filePath = path.resolve(basepath, theme, 'src', fileName);
+        const filePath = path.resolve(basepath, theme, 'src', fileName);
         if (!fileExists(filePath)) {
             fs.writeFileSync(filePath, '', 'utf8');
             console.log(theme, ' 创建遗漏的 ', fileName, ' 文件');
@@ -85,17 +85,11 @@ themes.forEach((theme) => {
     console.log(indexContent);
     fs.writeFileSync(path.resolve(basepath, theme, "src", isSCSS ? 'index.scss' : 'index.css'), indexContent);
 });
-
+console.timeLog();
 const process = require("child_process");
 process.exec("gulp build --gulpfile packages/theme/gulpfile.js", (error, stdout, stderr) => {
     if (error) {
         console.log("error:" + error);
-    } else {
-        console.log("stdout:" + stdout);
-    }
-
-    if (stderr) {
-        console.log("stderr:" + stderr);
     }
 
     themes.forEach((theme) => {
@@ -103,4 +97,6 @@ process.exec("gulp build --gulpfile packages/theme/gulpfile.js", (error, stdout,
         delFile(path.join(basepath, theme + "/super"));
         delFile(path.join(basepath, theme + "/css"));
     });
+
+    console.timeEnd();
 });
