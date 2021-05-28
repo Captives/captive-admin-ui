@@ -5,6 +5,12 @@
 npm install
 ```
 
+### 克隆主题
+```
+cd packages/
+git clone https://github.com/ElementUI/theme-chalk 
+```
+
 ### 开发调试
 ```
 npm run serve

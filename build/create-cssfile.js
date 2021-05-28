@@ -67,6 +67,7 @@ function fileExists(filePath) {
 themes.forEach((theme) => {
     //拷贝主题模板
     copyDirectory(path.join(basepath, superTheme + "/src"), path.join(basepath, theme + "/super"));
+    // delFile(path.join(basepath, theme + "/super/index.scss"));
 
     var isSCSS = theme !== 'theme-default';
     var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
