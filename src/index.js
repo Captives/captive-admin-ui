@@ -2,8 +2,6 @@ import Button from '/packages/button';
 import Input from '/packages/input';
 import Fullscreen from '/packages/fullscreen';
 
-import 'element-ui/lib/theme-chalk/index.css';
-
 import {
     Pagination,
     Dialog,
@@ -284,5 +282,7 @@ let library = {
 components.forEach(component => {
     library[component.name] = component.name;
 });
+
+console.log('library', library);
 
 export default library;

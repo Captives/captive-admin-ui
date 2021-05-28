@@ -13,13 +13,15 @@
             <jr-button type="info">信息按钮</jr-button>
             <jr-button type="warning" @click.native="changeHandler(true)">全屏</jr-button>
         </div>
-
+        <VueForm style="width:480px; margin:0 auto"></VueForm>
     </div>
 </template>
 
 <script>
+import VueForm from "./components/Form";
 export default {
     name: "Main",
+    components: { VueForm },
     data() {
         return {
             fullscreen: false,

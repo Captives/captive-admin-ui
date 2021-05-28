@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Main from './Main.vue'
 
-Vue.config.productionTip = false;
 
+
+import "../packages/theme/index.scss";
 import AdminUI from '../src';
 Vue.use(AdminUI);
 
 
-new Vue({
-    render: h => h(Main),
-}).$mount('#app')
+Vue.config.productionTip = false;
+new Vue({ render: h => h(Main) }).$mount('#app')

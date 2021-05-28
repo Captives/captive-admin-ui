@@ -1,0 +1,5 @@
+{
+    "button": "./packages/button/index.js",
+    "fullscreen": "./packages/fullscreen/index.js",
+    "input": "./packages/input/index.js"
+}

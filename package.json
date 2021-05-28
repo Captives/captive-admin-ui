@@ -19,7 +19,9 @@
         "serve": "vue-cli-service serve",
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
         "build": "node build/build.js",
-        "build_all": "node build/build.js all"
+        "build_all": "node build/build.js all",
+        "dist": "webpack --config build/webpack.conf.js && webpack --config build/webpack.component.js",
+        "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk"
     },
     "keywords": [
         "admin-ui",
@@ -35,9 +37,13 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
+        "progress-bar-webpack-plugin": "^2.1.0",
+        "terser-webpack-plugin": "^5.1.2",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",
-        "vue-template-compiler": "^2.6.11"
+        "vue-loader": "^15.9.7",
+        "vue-template-compiler": "^2.6.11",
+        "webpack-cli": "^4.7.0"
     },
     "license": "MIT",
     "browserslist": [
