@@ -56,6 +56,4 @@ npm publish     # 发布
 - 在项目根目录下`components.json`内定义组件
 - 在根目录下的`src/index.js`入口处，注册组件
 
-:::
-项目继承`element-ui`组件库和`theme-chalk`主题库，组件的**class**必须`el-`命名空间开头
-:::
+> 项目继承`element-ui`组件库和`theme-chalk`主题库，组件的**class**必须`el-`命名空间开头
