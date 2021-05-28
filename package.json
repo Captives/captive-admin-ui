@@ -1,6 +1,6 @@
 {
     "name": "captive-admin-ui",
-    "version": "1.0.5-5",
+    "version": "1.0.5-6",
     "private": false,
     "main": "lib/captive-admin-ui.umd.js",
     "description": "基于element-ui开发对内部UI库(测试)",
