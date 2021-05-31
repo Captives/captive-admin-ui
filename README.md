@@ -50,10 +50,10 @@ npm publish     # 发布
 ## 作业
 
 ### 组件
-新建一个组件到步骤
+新建一个组件的步骤
 - 在`packages`目录下新建组件名的目录，并同时创建`index.js`和`src`子目录
 - 在`packages/theme/src/`目录下定义同名样式组件
-- 在项目根目录下`components.json`内定义组件
+- 在项目根目录下`components.json`内`ui`项目下定义组件，`element-ui`下引入**element-ui**组件
 - 在根目录下的`src/index.js`入口处，注册组件
 
 > 项目继承`element-ui`组件库和`theme-chalk`主题库，组件的**class**必须`el-`命名空间开头

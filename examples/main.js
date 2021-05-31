@@ -16,9 +16,12 @@ import "../packages/theme/src/index.scss";
 //按需引用
 import AdminUI from '../src';
 const { Button, Fullscreen } = AdminUI;
-console.log(Button);
+
+// import { Button, Fullscreen, Menu } from '../src';
+
 Vue.component(Button.name, Button);
 Vue.component(Fullscreen.name, Fullscreen);
+// Vue.component(Menu.name, Menu);
 
 Vue.config.productionTip = false;
 new Vue({ render: h => h(Main) }).$mount('#app')

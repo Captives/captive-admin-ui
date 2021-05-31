@@ -3,11 +3,9 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 const Components = require('../components.json');
 
-// const Components = require('../packages/index.json');
-
 module.exports = {
     mode: 'production',
-    entry: Components,
+    entry: Components.ui,
     output: {
         path: path.resolve(process.cwd(), './lib'),
         publicPath: '/dist/',

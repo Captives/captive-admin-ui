@@ -53,7 +53,7 @@ function delFile(path, reservePath) {
 }
 
 const themes = ['theme'];
-Components = Object.keys(Components);
+Components = Object.keys(Components.ui);
 
 function fileExists(filePath) {
     try {
