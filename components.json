@@ -1,6 +1,7 @@
 {
     "ui": {
         "button": "./packages/button/index.js",
+        "input": "./packages/input/index.js",
         "fullscreen": "./packages/fullscreen/index.js"
     },
     "element-ui": [
@@ -14,7 +15,6 @@
         "Submenu",
         "MenuItem",
         "MenuItemGroup",
-        "Input",
         "InputNumber",
         "Radio",
         "RadioGroup",

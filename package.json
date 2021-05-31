@@ -23,7 +23,7 @@
         "build": "webpack --config build/webpack.conf.js",
         "build:all": "webpack --config build/webpack.component.js",
         "build:theme": "node build/cssfile.js",
-        "dist": "npm run lib && npm run build && npm run build:all && npm run build:theme"
+        "dist": "npm run lib && npm run entry && npm run build && npm run build:all && npm run build:theme"
     },
     "keywords": [
         "admin-ui",
@@ -44,6 +44,7 @@
         "babel-plugin-module-resolver": "^4.1.0",
         "babel-plugin-transform-vue-jsx": "^3.7.0",
         "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-2": "^6.24.1",
         "element-theme-chalk": "git clone https://github.com/ElementUI/theme-chalk.git",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
