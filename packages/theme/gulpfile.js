@@ -20,7 +20,7 @@ function compile() {
 
 //字体
 function copyfont() {
-    return src('./src/fonts/**')
+    return src(['./super/fonts/**', './src/fonts/**'])
         .pipe(cssmin())
         .pipe(dest('./css/fonts'));
 }

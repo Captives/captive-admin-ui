@@ -16,6 +16,7 @@
     },
     "homepage": "http://captives.github.io",
     "scripts": {
+        "init": "node build/create.js",
         "serve": "vue-cli-service serve",
         "entry": "node build/entry.js",
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
@@ -38,6 +39,11 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
+        "babel-plugin-component": "^1.1.1",
+        "babel-plugin-istanbul": "^6.0.0",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "babel-plugin-transform-vue-jsx": "^3.7.0",
+        "babel-preset-env": "^1.7.0",
         "element-theme-chalk": "git clone https://github.com/ElementUI/theme-chalk.git",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",

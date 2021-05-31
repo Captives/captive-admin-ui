@@ -2,3 +2,8 @@
 @import "./../../theme-chalk/src/common/var.scss";
 @import "./../../theme-chalk/src/mixins/mixins";
 @import "./../../theme-chalk/src/mixins/utils";
+//继承
+@import './../../theme-chalk/src/button.scss';
+.el-button {
+    border: 1px dotted red;
+}
