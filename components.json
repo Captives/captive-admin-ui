@@ -59,7 +59,6 @@
         "CarouselItem",
         "Collapse",
         "CollapseItem",
-        "Cascader",
         "ColorPicker",
         "Transfer",
         "Container",
@@ -73,12 +72,14 @@
         "Divider",
         "Image",
         "Calendar",
-        "Loading",
         "Backtop",
         "PageHeader",
+        "Cascader",
+        "CascaderPanel",
         "Popconfirm",
-        "Message",
+        "Loading",
         "MessageBox",
+        "Message",
         "Notification"
     ]
 }

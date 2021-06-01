@@ -43,6 +43,7 @@ export default {
         },
         fullChangeHandler(full) {
             console.log(full ? "全屏中" : "退出全屏");
+            this.$message({ type: "success", message: full ? "全屏中" : "退出全屏" });
         },
     },
 };

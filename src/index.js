@@ -56,7 +56,6 @@ Carousel,
 CarouselItem,
 Collapse,
 CollapseItem,
-Cascader,
 ColorPicker,
 Transfer,
 Container,
@@ -70,12 +69,14 @@ Link,
 Divider,
 Image,
 Calendar,
-Loading,
 Backtop,
 PageHeader,
+Cascader,
+CascaderPanel,
 Popconfirm,
-Message,
+Loading,
 MessageBox,
+Message,
 Notification } from 'element-ui';
 import locale from 'element-ui/src/locale';
 import InfiniteScroll from 'element-ui/packages/infinite-scroll/index.js';
@@ -134,7 +135,6 @@ Carousel.name = 'JrCarousel';
 CarouselItem.name = 'JrCarouselItem';
 Collapse.name = 'JrCollapse';
 CollapseItem.name = 'JrCollapseItem';
-Cascader.name = 'JrCascader';
 ColorPicker.name = 'JrColorPicker';
 Transfer.name = 'JrTransfer';
 Container.name = 'JrContainer';
@@ -150,6 +150,8 @@ Image.name = 'JrImage';
 Calendar.name = 'JrCalendar';
 Backtop.name = 'JrBacktop';
 PageHeader.name = 'JrPageHeader';
+Cascader.name = 'JrCascader';
+CascaderPanel.name = 'JrCascaderPanel';
 Popconfirm.name = 'JrPopconfirm';
 
 const components = [
@@ -210,7 +212,6 @@ const components = [
   CarouselItem,
   Collapse,
   CollapseItem,
-  Cascader,
   ColorPicker,
   Transfer,
   Container,
@@ -226,6 +227,8 @@ const components = [
   Calendar,
   Backtop,
   PageHeader,
+  Cascader,
+  CascaderPanel,
   Popconfirm,
   CollapseTransition
 ];
@@ -260,12 +263,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.5-11',
+  version: '1.0.5-13',
   locale: locale.use,
   i18n: locale.i18n,
   install,
-  CollapseTransition,
   Loading,
+  CollapseTransition,
   Button,
   Input,
   Fullscreen,
@@ -323,7 +326,6 @@ export default {
   CarouselItem,
   Collapse,
   CollapseItem,
-  Cascader,
   ColorPicker,
   Transfer,
   Container,
@@ -339,8 +341,10 @@ export default {
   Calendar,
   Backtop,
   PageHeader,
+  Cascader,
+  CascaderPanel,
   Popconfirm,
-  Message,
   MessageBox,
+  Message,
   Notification
 };

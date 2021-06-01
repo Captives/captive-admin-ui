@@ -8,19 +8,18 @@ import Main from './Main.vue'
 //源码(开发时使用)
 import "../packages/theme/src/index.scss";
 
+import AdminUI from '../src';
+
 //全体注册
-// import AdminUI from '../src';
-// Vue.use(AdminUI);
+Vue.use(AdminUI);
 
 
 //按需引用
-import AdminUI from '../src';
-const { Button, Fullscreen } = AdminUI;
-
+// const { Button, Fullscreen } = AdminUI;
 // import { Button, Fullscreen, Menu } from '../src';
 
-Vue.component(Button.name, Button);
-Vue.component(Fullscreen.name, Fullscreen);
+// Vue.component(Button.name, Button);
+// Vue.component(Fullscreen.name, Fullscreen);
 // Vue.component(Menu.name, Menu);
 
 Vue.config.productionTip = false;
