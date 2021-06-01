@@ -72,7 +72,11 @@ Image,
 Calendar,
 Loading,
 Backtop,
-Popconfirm } from 'element-ui';
+PageHeader,
+Popconfirm,
+Message,
+MessageBox,
+Notification } from 'element-ui';
 import locale from 'element-ui/src/locale';
 import InfiniteScroll from 'element-ui/packages/infinite-scroll/index.js';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
@@ -145,6 +149,7 @@ Divider.name = 'JrDivider';
 Image.name = 'JrImage';
 Calendar.name = 'JrCalendar';
 Backtop.name = 'JrBacktop';
+PageHeader.name = 'JrPageHeader';
 Popconfirm.name = 'JrPopconfirm';
 
 const components = [
@@ -220,6 +225,7 @@ const components = [
   Image,
   Calendar,
   Backtop,
+  PageHeader,
   Popconfirm,
   CollapseTransition
 ];
@@ -254,7 +260,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.5-8',
+  version: '1.0.5-11',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -332,5 +338,9 @@ export default {
   Image,
   Calendar,
   Backtop,
-  Popconfirm
+  PageHeader,
+  Popconfirm,
+  Message,
+  MessageBox,
+  Notification
 };

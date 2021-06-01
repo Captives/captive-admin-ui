@@ -75,6 +75,10 @@
         "Calendar",
         "Loading",
         "Backtop",
-        "Popconfirm"
+        "PageHeader",
+        "Popconfirm",
+        "Message",
+        "MessageBox",
+        "Notification"
     ]
 }
