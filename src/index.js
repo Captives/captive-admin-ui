@@ -263,7 +263,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.5-13',
+  version: '1.0.6',
   locale: locale.use,
   i18n: locale.i18n,
   install,
