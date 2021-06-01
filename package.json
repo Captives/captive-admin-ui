@@ -41,6 +41,7 @@
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-service": "~4.5.0",
+        "babel-loader": "^8.2.2",
         "babel-plugin-component": "^1.1.1",
         "babel-plugin-istanbul": "^6.0.0",
         "babel-plugin-module-resolver": "^4.1.0",
@@ -53,6 +54,7 @@
         "gulp-cssmin": "^0.2.0",
         "gulp-sass": "^4.1.0",
         "json-templater": "^1.2.0",
+        "param-case": "^3.0.4",
         "progress-bar-webpack-plugin": "^2.1.0",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",

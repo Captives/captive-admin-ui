@@ -2,9 +2,9 @@
 const endOfLine = require('os').EOL;
 const inquirer = require('inquirer');
 const fs = require('fs-extra');
-const path = require('path');
 const render = require('json-templater/string');
 const uppercamelcase = require('uppercamelcase');
+const { paramCase } = require('param-case');
 
 /**
  * 校验
@@ -29,13 +29,13 @@ export default {
 
 const VUE_EXTEND_TEMPLATE = `
 <template>
-    <el-{{package}} v-bind="$attrs"></el-{{package}}>
+    <el-{{supname}} v-bind="$attrs"></el-{{supname}}>
 </template>
 <script>
-import { {{name}} } from "element-ui";
+import { {{parent}} } from "element-ui";
 export default {
     name: "Jr{{name}}",
-    components: { [Input.name]: Input }
+    components: { [{{parent}}.name]: {{parent}} }
 };
 </script>`;
 
@@ -52,7 +52,7 @@ const VUE_EXTEND_STYLE = `
 @import "./../../theme-chalk/src/mixins/mixins";
 @import "./base.scss";
 //继承
-@import './../../theme-chalk/src/{{name}}.scss';
+@import './../../theme-chalk/src/{{supname}}.scss';
 @include b({{name}}) {
     //TODO ...
 }`;
@@ -80,7 +80,25 @@ const creating = () => {
     json.ui[manifest.name] = "./packages/" + manifest.name + "/index.js";
     //重名的替换掉
     json['element-ui'].splice(json['element-ui'].indexOf(uppercamelcase(manifest.name)), 1);
-    console.log(json);
+
+    console.log('组件创建中....');
+    fs.ensureDirSync(`packages/theme/src/`, { mode: 0o2775 }); //创建目录，775权限
+    fs.ensureDirSync(`packages/${manifest.name}/src/`, { mode: 0o2775 }); //创建目录，775权限
+    fs.writeFileSync(`packages/${manifest.name}/index.js`, render(VUE_ENTRY_TEMPLATE, { name: uppercamelcase(manifest.name) }));
+    if (manifest.extend) {
+        fs.writeFileSync(`packages/${manifest.name}/src/${uppercamelcase(manifest.name)}.vue`, render(VUE_EXTEND_TEMPLATE, { name: uppercamelcase(manifest.name), parent: manifest.parent, supname: paramCase(manifest.parent) }));
+        fs.writeFileSync(`packages/theme/src/${manifest.name}.scss`, render(VUE_EXTEND_STYLE, { name: manifest.name, supname: paramCase(manifest.parent) }));
+    } else {
+        fs.writeFileSync(`packages/${manifest.name}/src/${uppercamelcase(manifest.name)}.vue`, render(VUE_TEMPLATE, { name: uppercamelcase(manifest.name) }));
+        fs.writeFileSync(`packages/theme/src/${manifest.name}.scss`, render(VUE_STYLE, { name: manifest.name }));
+    }
+    fs.outputJSONSync('components.json', json);
+
+    console.log('样式创建编译....');
+    require('./cssfile');
+
+    console.log('入口文件注入....');
+    require('./entry');
 }
 
 
@@ -107,12 +125,12 @@ inquirer.prompt([{
     return inquirer.prompt([{
         name: 'name',
         type: 'input',
-        message: `请输入组件名称(全小写'-'分割)?`,
+        message: `请输入组件名称?`,
         validate: (input) => {
             if (!input) {
                 console.log("\n" + '不能为空，请重新输入');
                 return false;
-            } else if (Object.keys(Components.ui).includes(input.toLowerCase())) {
+            } else if (Object.keys(Components.ui).includes(paramCase(input))) {
                 console.log("\n" + input + '已经存在，请重新输入!');
                 return false;
             } else if (Components['element-ui'].includes(uppercamelcase(input)) && !manifest.extend) {
@@ -124,7 +142,7 @@ inquirer.prompt([{
         },
     }]);
 }).then((data) => {
-    manifest.name = data.name.toLowerCase();
+    manifest.name = paramCase(data.name);
     creating();
 }).catch((error) => {
     if (error.isTtyError) {

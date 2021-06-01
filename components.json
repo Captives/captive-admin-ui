@@ -73,12 +73,8 @@
         "Divider",
         "Image",
         "Calendar",
-        "Backtop",
-        "PageHeader",
-        "CascaderPanel",
         "Loading",
-        "MessageBox",
-        "Message",
-        "Notification"
+        "Backtop",
+        "Popconfirm"
     ]
 }

@@ -70,13 +70,9 @@ Link,
 Divider,
 Image,
 Calendar,
-Backtop,
-PageHeader,
-CascaderPanel,
 Loading,
-MessageBox,
-Message,
-Notification } from 'element-ui';
+Backtop,
+Popconfirm } from 'element-ui';
 import locale from 'element-ui/src/locale';
 import InfiniteScroll from 'element-ui/packages/infinite-scroll/index.js';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
@@ -149,8 +145,7 @@ Divider.name = 'JrDivider';
 Image.name = 'JrImage';
 Calendar.name = 'JrCalendar';
 Backtop.name = 'JrBacktop';
-PageHeader.name = 'JrPageHeader';
-CascaderPanel.name = 'JrCascaderPanel';
+Popconfirm.name = 'JrPopconfirm';
 
 const components = [
   Button,
@@ -225,8 +220,7 @@ const components = [
   Image,
   Calendar,
   Backtop,
-  PageHeader,
-  CascaderPanel,
+  Popconfirm,
   CollapseTransition
 ];
 
@@ -260,7 +254,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.5-7',
+  version: '1.0.5-8',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -338,9 +332,5 @@ export default {
   Image,
   Calendar,
   Backtop,
-  PageHeader,
-  CascaderPanel,
-  MessageBox,
-  Message,
-  Notification
+  Popconfirm
 };

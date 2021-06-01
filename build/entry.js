@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const render = require('json-templater/string');
 const uppercamelcase = require('uppercamelcase');
+const { paramCase } = require('param-case');
 const endOfLine = require('os').EOL;
 
 const Components = require('./../components.json');
@@ -90,7 +91,7 @@ includeTemplate.push(render(IMPORT_TEMPLATE.other, {
 
 Components['element-ui'].forEach((name) => {
     const componentName = uppercamelcase(name);
-    // includeTemplate.push(render(IMPORT_TEMPLATE.element, { name: componentName, package: name }));
+    // includeTemplate.push(render(IMPORT_TEMPLATE.element, { name: componentName, package: paramCase(name) }));
 
     if (['Loading', 'MessageBox', 'Notification', 'Message', 'InfiniteScroll'].indexOf(componentName) === -1) {
         namesTemplate.push(render(`{{name}}.name = 'Jr{{name}}';`, { name: componentName }));
