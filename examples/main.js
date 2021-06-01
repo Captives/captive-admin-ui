@@ -11,7 +11,7 @@ import "../packages/theme/src/index.scss";
 import AdminUI from '../src';
 
 //全体注册
-Vue.use(AdminUI);
+Vue.use(AdminUI, { size: 'small' });
 
 
 //按需引用
