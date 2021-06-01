@@ -29,7 +29,7 @@ export default {
 
 const VUE_EXTEND_TEMPLATE = `
 <template>
-    <el-{{supname}} v-bind="$attrs"></el-{{supname}}>
+    <el-{{supname}} v-bind="$attrs" v-on="$listeners"></el-{{supname}}>
 </template>
 <script>
 import { {{parent}} } from "element-ui";
