@@ -8,14 +8,13 @@ const { paramCase } = require('param-case');
 
 /**
  * 校验
- * ui 增加
- * element-ui 移除
+ * ui 增加，重名的需要重新更名
+ * element-ui 重名的移除覆盖
  * packages 创建目录，创建index.js、创建src、创建src/组件.vue文件
  * packages/theme 下创建组件.scss文件
  * 调用 cssfile.js 执行代码，更新引用～
  * 调用 entry.js 执行入口代码绑定
  */
-
 
 const VUE_TEMPLATE = `
 <template>
@@ -66,7 +65,9 @@ import {{name}} from './src/{{name}}.vue';
 export default {{name}};`;
 
 
+const elements = require('./../src/element.json');
 const Components = require('./../components.json');
+delete elements.icon;
 
 let manifest = {
     name: null,
@@ -80,7 +81,6 @@ const creating = () => {
     json.ui[manifest.name] = "./packages/" + manifest.name + "/index.js";
     //重名的替换掉
     json['element-ui'].splice(json['element-ui'].indexOf(uppercamelcase(manifest.name)), 1);
-
     console.log('组件创建中....');
     fs.ensureDirSync(`packages/theme/src/`, { mode: 0o2775 }); //创建目录，775权限
     fs.ensureDirSync(`packages/${manifest.name}/src/`, { mode: 0o2775 }); //创建目录，775权限
@@ -101,6 +101,50 @@ const creating = () => {
     require('./entry');
 }
 
+const work = () => {
+    return inquirer.prompt([{
+        name: 'name',
+        type: 'input',
+        message: `请输入组件名称?`,
+        validate: async(input) => {
+            if (!input) {
+                console.log("\n" + '不能为空，请重新输入');
+                return false;
+            } else if (Object.keys(Components.ui).includes(paramCase(input))) {
+                console.log("\n" + input + '已经存在，请重新输入!');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }]).then((data) => {
+        const name = uppercamelcase(data.name);
+        if (Components['element-ui'].includes(name)) {
+            return inquirer.prompt([{
+                name: 'replaced',
+                type: 'list',
+                message: name + '已经存在，是否替换?',
+                choices: [{ name: "Yes", value: true }, { name: "No", value: false }]
+            }]).then(data => {
+                if (data.replaced) {
+                    manifest.name = paramCase(name);
+                    creating();
+                } else {
+                    return work();
+                }
+            })
+        } else {
+            manifest.name = paramCase(name);
+            creating();
+        }
+    }).catch((error) => {
+        if (error.isTtyError) {
+            console.log("无法在当前环境中引导");
+        } else {
+            console.log("错误", error);
+        }
+    });
+}
 
 //询问
 inquirer.prompt([{
@@ -113,41 +157,14 @@ inquirer.prompt([{
     if (data.extend) {
         return inquirer.prompt([{
             name: 'parentComponent',
-            type: 'list',
+            type: 'rawlist',
             message: '请选择需要继承的组件：',
             pageSize: 20,
-            choices: Components['element-ui'],
+            choices: Object.keys(elements).map(name => uppercamelcase(name)),
             loop: false
         }]);
     }
 }).then(data => {
     manifest.parent = manifest.extend ? data.parentComponent : null;
-    return inquirer.prompt([{
-        name: 'name',
-        type: 'input',
-        message: `请输入组件名称?`,
-        validate: (input) => {
-            if (!input) {
-                console.log("\n" + '不能为空，请重新输入');
-                return false;
-            } else if (Object.keys(Components.ui).includes(paramCase(input))) {
-                console.log("\n" + input + '已经存在，请重新输入!');
-                return false;
-            } else if (Components['element-ui'].includes(uppercamelcase(input)) && !manifest.extend) {
-                console.log("\n" + input + '已经存在，请重新输入!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-    }]);
-}).then((data) => {
-    manifest.name = paramCase(data.name);
-    creating();
-}).catch((error) => {
-    if (error.isTtyError) {
-        console.log("无法在当前环境中引导");
-    } else {
-        console.log("错误", error);
-    }
+    return work();
 });
