@@ -34,8 +34,6 @@
     "dependencies": {
         "core-js": "^3.6.5",
         "element-ui": "^2.15.1",
-        "fs-extra": "^10.0.0",
-        "inquirer": "^8.1.0",
         "vue": "^2.6.11"
     },
     "devDependencies": {
@@ -62,6 +60,8 @@
         "gulp-sass": "^4.1.0",
         "json-templater": "^1.2.0",
         "param-case": "^3.0.4",
+        "fs-extra": "^10.0.0",
+        "inquirer": "^8.1.0",
         "progress-bar-webpack-plugin": "^2.1.0",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",
