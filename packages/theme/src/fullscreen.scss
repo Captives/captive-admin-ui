@@ -2,7 +2,6 @@
 @import "./../../theme-chalk/src/mixins/mixins";
 @import "./base.scss";
 @include b(fullscreen) {
-    background: $--color-primary;
     display: inline-block;
     padding: 0;
     &.full {

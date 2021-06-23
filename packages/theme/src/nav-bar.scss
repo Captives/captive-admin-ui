@@ -1,0 +1,30 @@
+@import "./../../theme-chalk/src/common/var";
+@import "./../../theme-chalk/src/mixins/mixins";
+@import "./base.scss";
+//继承
+@import "./../../theme-chalk/src/menu.scss";
+@include b(nav-bar) {
+    background: $--menu-background-color;
+    .menu-badge {
+        color: #fff;
+        background: red;
+        padding: 0 6px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 12px;
+        vertical-align: super;
+        display: inline-block;
+        &.dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            padding: 0;
+        }
+    }
+    .el-menu {
+        border-right: none;
+    }
+}

@@ -2,6 +2,7 @@
     "ui": {
         "button": "./packages/button/index.js",
         "input": "./packages/input/index.js",
+        "nav-bar": "./packages/nav-bar/index.js",
         "fullscreen": "./packages/fullscreen/index.js"
     },
     "element-ui": [
