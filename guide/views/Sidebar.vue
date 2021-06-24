@@ -85,7 +85,7 @@ export default {
                 this.hideAllMenu();
                 let activeAnchor = this.$el.querySelector("a.active");
                 let ul = activeAnchor.parentNode;
-                while (ul && ul.tagName !== "UL") {
+                while (!!ul && ul.tagName !== "UL") {
                     ul = ul.parentNode;
                 }
                 ul.style.height = "auto";

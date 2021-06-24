@@ -161,6 +161,7 @@
 
 <script>
 export default {
+    name: "DemoBlock",
     data() {
         return {
             hovering: false,

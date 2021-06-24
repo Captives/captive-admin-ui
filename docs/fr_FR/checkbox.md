@@ -10,6 +10,7 @@ Checkbox peut être utilisé seul pour switcher entre deux états.
 
 ```html
 <template>
+  <!-- `checked` should be true or false -->
   <el-checkbox v-model="checked">Option</el-checkbox>
 </template>
 <script>
@@ -238,46 +239,46 @@ Des checkbox avec une apparence de bouton.
 :::
 
 ### Attributs Checkbox
-| Attribut        | Description                                                    | Type                      | Options               | Défaut |
-| --------------- | -------------------------------------------------------------- | ------------------------- | --------------------- | ------ |
-| value / v-model | La valeur liée.                                                | string / number / boolean | —                     | —      |
-| label           | Valeur de la checkbox quand utilisée dans un `checkbox-group`. | string / number / boolean | —                     | —      |
-| true-label      | Valeur de la checkbox si cochée.                               | string / number           | —                     | —      |
-| false-label     | Valeur de la checkbox si non cochée.                           | string / number           | —                     | —      |
-| disabled        | Désactive la checkbox.                                         | boolean                   | —                     | false  |
-| border          | Ajoute une bordure à la checkbox.                              | boolean                   | —                     | false  |
-| size            | taille de la checkbox, ne marche que si `border` est 'true'    | string                    | medium / small / mini | —      |
-| name            | Attribut 'name' natif.                                         | string                    | —                     | —      |
-| checked         | Si la checkbox est cochée.                                     | boolean                   | —                     | false  |
-| indeterminate   | Identique à `indeterminate` dans les checkbox natives.         | boolean                   | —                     | false  |
+| Attribut      | Description         | Type    | Options                         | Défaut|
+|---------- |-------- |---------- |-------------  |-------- |
+| value / v-model | La valeur liée. | string / number / boolean | — | — |
+| label     | Valeur de la checkbox quand utilisée dans un `checkbox-group`.   | string / number / boolean   |       —        |     —    |
+| true-label | Valeur de la checkbox si cochée.   | string / number    |       —        |     —    |
+| false-label | Valeur de la checkbox si non cochée.   | string / number    |      —         |     —    |
+| disabled  | Désactive la checkbox.   | boolean   |  — | false   |
+| border  | Ajoute une bordure à la checkbox.  | boolean   | — | false   |
+| size  | taille de la checkbox, ne marche que si `border` est 'true'  | string  | medium / small / mini | — |
+| name | Attribut 'name' natif. | string    |      —         |     —    |
+| checked  | Si la checkbox est cochée.   | boolean   |  — | false   |
+| indeterminate  | Identique à `indeterminate` dans les checkbox natives. | boolean   |  — | false   |
 
 ### Évènements Checkbox
-| Nom    | Description                          | Paramètres         |
-| ------ | ------------------------------------ | ------------------ |
-| change | Se déclenche quand la valeur change. | La nouvelle valeur |
+| Nom | Description | Paramètres |
+|---------- |-------- |---------- |
+| change  | Se déclenche quand la valeur change. | La nouvelle valeur |
 
 ### Attributs Checkbox-group
-| Attribut        | Description                                                 | Type    | Options               | Défaut  |
-| --------------- | ----------------------------------------------------------- | ------- | --------------------- | ------- |
-| value / v-model | La valeur liée.                                             | array   | —                     | —       |
-| size            | Taille des checkbox-boutons ou des checkbox avec bordure.   | string  | medium / small / mini | —       |
-| disabled        | Si les checkbox imbriquées sont désactivées.                | boolean | —                     | false   |
-| min             | Nombre minimum de checkbox cochées.                         | number  | —                     | —       |
-| max             | Nombre maximum de checkbox cochées.                         | number  | —                     | —       |
-| text-color      | Couleur de police quand le bouton est actif.                | string  | —                     | #ffffff |
-| fill            | Couleur de la bordure et du fond quand le bouton est actif. | string  | —                     | #409EFF |
+| Attribut      | Description         | Type    | Options                         | Défaut|
+|---------- |-------- |---------- |-------------  |-------- |
+| value / v-model | La valeur liée. | array | — | — |
+|size | Taille des checkbox-boutons ou des checkbox avec bordure. | string | medium / small / mini | — |
+| disabled  | Si les checkbox imbriquées sont désactivées. | boolean   | — | false   |
+| min     | Nombre minimum de checkbox cochées.   | number    |       —        |     —    |
+| max     | Nombre maximum de checkbox cochées.   | number    |       —        |     —    |
+|text-color | Couleur de police quand le bouton est actif. | string   | — | #ffffff   |
+|fill  | Couleur de la bordure et du fond quand le bouton est actif. | string   | — | #409EFF   |
 
 ### Évènements Checkbox-group
-| Nom    | Description                          | Paramètres         |
-| ------ | ------------------------------------ | ------------------ |
-| change | Se déclenche quand la valeur change. | La nouvelle valeur |
+| Nom | Description | Paramètres |
+|---------- |-------- |---------- |
+| change  | Se déclenche quand la valeur change. | La nouvelle valeur |
 
 ### Attributs Checkbox-button
-| Attribut    | Description                                                   | Type                      | Options | Défaut |
-| ----------- | ------------------------------------------------------------- | ------------------------- | ------- | ------ |
-| label       | Valeur de la checkbox quand utilisée dans un `checkbox-group` | string / number / boolean | —       | —      |
-| true-label  | Valeur de la checkbox si cochée.                              | string / number           | —       | —      |
-| false-label | Valeur de la checkbox si non cochée.                          | string / number           | —       | —      |
-| disabled    | Si la checkbox est désactivée.                                | boolean                   | —       | false  |
-| name        | Attribut 'name' natif.                                        | string                    | —       | —      |
-| checked     | Si la checkbox est cochée.                                    | boolean                   | —       | false  |
+| Attribut      | Description         | Type    | Options                         | Défaut|
+|---------- |-------- |---------- |-------------  |-------- |
+| label     | Valeur de la checkbox quand utilisée dans un `checkbox-group` | string / number / boolean  |       —        |     —    |
+| true-label | Valeur de la checkbox si cochée. | string / number | — |     —    |
+| false-label | Valeur de la checkbox si non cochée. | string / number    |      —         |     —    |
+| disabled  | Si la checkbox est désactivée. | boolean   |  — | false   |
+| name | Attribut 'name' natif. | string    |      —         |     —    |
+| checked  | Si la checkbox est cochée. | boolean   |  — | false   |

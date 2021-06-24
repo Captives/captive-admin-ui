@@ -1,11 +1,11 @@
 <template>
     <!-- <jr-fullscreen id="app" v-model="fullscreen" @change="fullChangeHandler"> -->
-    <el-container>
+    <el-container id="app">
         <div class="sidebar">
-            <!-- <NavBar :data="list" slot="sidebar" label-field="name" value-field="path" @change="navChangeHandler">
-                    <jr-button v-if="!fullscreen" type="warning" @click.native="changeHandler(true)">进入全屏</jr-button>
-                    <jr-button v-if="fullscreen" type="danger" @click.native="changeHandler(false)">退出全屏</jr-button>
-                </NavBar> -->
+            <NavBar :data="list" slot="sidebar" label-field="name" value-field="path" @change="navChangeHandler">
+                <!-- <jr-button v-if="!fullscreen" type="warning" @click.native="changeHandler(true)">进入全屏</jr-button>
+                <jr-button v-if="fullscreen" type="danger" @click.native="changeHandler(false)">退出全屏</jr-button> -->
+            </NavBar>
 
             <Siderbar v-for="(item,lang) in docs" :key="lang" :lang="lang" :data="item"></Siderbar>
         </div>
@@ -53,9 +53,10 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "./assets/bass.scss";
-@import "./assets/hljs.scss";
-@import "./assets/md.scss";
+@import "./demo-styles/index.scss";
+@import "./assets/styles/bass.scss";
+@import "./assets/styles/hljs.scss";
+@import "./assets/styles/md.scss";
 </style>
 <style lang="scss" scoped>
 html,
@@ -77,6 +78,16 @@ body,
         overflow-y: auto;
         .el-nav-bar {
             height: 100%;
+        }
+    }
+
+    .el-main {
+        ::v-deep .page-component__scroll {
+            overflow-y: auto;
+            height: 100%;
+        }
+        ::v-deep .page-component__content {
+            max-width: 750px;
         }
     }
 }

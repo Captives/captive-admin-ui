@@ -1,6 +1,6 @@
 <script>
-  import bus from '../../bus';
-  import { ACTION_USER_CONFIG_UPDATE } from '../../components/theme/constant.js';
+import bus from '../../guide/utils/bus';
+  import { ACTION_USER_CONFIG_UPDATE } from '../../guide/components/theme/constant.js';
   const varMap = [
     '$--font-size-extra-large',
     '$--font-size-large',
@@ -69,12 +69,12 @@ Creamos una convención de fuentes para asegurar la mejor presentación en difer
 
 ### Fuente
 <div class="demo-term-box">
-<img src="../../assets/images/term-pingfang.png" alt="">
-<img src="../../assets/images/term-hiragino.png" alt="">
-<img src="../../assets/images/term-microsoft.png" alt="">
-<img src="../../assets/images/term-sf.png" alt="">
-<img src="../../assets/images/term-helvetica.png" alt="">
-<img src="../../assets/images/term-arial.png" alt="">
+<img src="assets/images/term-pingfang.png" alt="">
+<img src="assets/images/term-hiragino.png" alt="">
+<img src="assets/images/term-microsoft.png" alt="">
+<img src="assets/images/term-sf.png" alt="">
+<img src="assets/images/term-helvetica.png" alt="">
+<img src="assets/images/term-arial.png" alt="">
 </div>
 
 ### Convención de fuentes
@@ -135,7 +135,7 @@ Creamos una convención de fuentes para asegurar la mejor presentación en difer
 ### Font Line Height
 
 <div>
-<img class="lineH-left" src="~examples/assets/images/typography.png" />
+<img class="lineH-left" src="assets/images/typography.png" />
 <ul class="lineH-right">
 <li>line-height:1 <span>No line height</span></li>
 <li>line-height:1.3 <span>Compact</span></li>

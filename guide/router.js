@@ -8,24 +8,24 @@ let routes = [{
     icon: "el-icon-hot-water",
     name: "首页",
     component: () =>
-        import ("./views/Form.vue"),
+        import ("./views/Home.vue"),
     children: [{
         path: "/sub",
         name: "二级页面",
         component: () =>
-            import ("./views/Form.vue"),
+            import ("./views/Home.vue"),
         children: [{
             path: "/ssub",
             name: "二级页面-子页面",
             icon: "el-icon-hot-water",
             component: () =>
-                import ("./views/Form.vue"),
+                import ("./views/Home.vue"),
         }]
     }, {
         path: "/sub2",
         name: "二级页面2",
         component: () =>
-            import ("./views/Form.vue"),
+            import ("./views/Home.vue"),
     }]
 }];
 
@@ -41,7 +41,17 @@ const registerRoute = (navConfig) => {
             path: `/${lang}`,
             name: lang,
             redirect: `/${lang}/installation`,
-            component: Vue.extend({ template: `<div><h1>${lang} - 文档</h1><router-view></router-view></div>` }),
+            component: Vue.extend({
+                template: `
+                        <el-scrollbar class="page-component__scroll" ref="componentScrollBar">
+                            <h1>${lang} - 文档</h1>
+                            <div class="page-container page-component">
+                                <div class="page-component__content">
+                                    <router-view class="content"></router-view>
+                                </div
+                            </div>
+                        </el-scrollbar>`
+            }),
             children: []
         });
         navs.forEach(nav => {
@@ -64,7 +74,7 @@ const registerRoute = (navConfig) => {
 
     function addRoute(page, lang, index) {
         let child = {
-            path: page.path.slice(1),
+            path: '/' + lang + page.path, //.slice(1),
             meta: {
                 title: page.title || page.name,
                 description: page.description,
@@ -73,7 +83,6 @@ const registerRoute = (navConfig) => {
             name: lang + '__' + (page.title || page.name),
             component: r => require.ensure([], () => r(require(`./../docs/${lang + page.path}.md`)), 'zh-CN') //component.default || component
         };
-
         route[index].children.push(child);
     }
 
@@ -110,4 +119,6 @@ for (let lang in docs) {
     routes.push(doc);
 }
  */
+
+console.log(routes);
 export default new VueRouter({ base: process.env.BASE_URL, routes });

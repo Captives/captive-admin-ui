@@ -31,7 +31,7 @@ module.exports = {
             use: [{
                 loader: "vue-loader",
             }, {
-                loader: require.resolve("./build/markdown-loader.js"),
+                loader: require.resolve("./build/md-loader.js"),
             }],
         });
     },

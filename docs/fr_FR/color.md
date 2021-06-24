@@ -1,7 +1,7 @@
 <script>
-  import bus from '../../bus';
-  import { tintColor } from '../../color.js';
-  import { ACTION_USER_CONFIG_UPDATE } from '../../components/theme/constant.js';
+  import bus from '../../guide/utils/bus';
+  import { tintColor } from '../../guide/utils/color.js';
+  import { ACTION_USER_CONFIG_UPDATE } from '../../guide/components/theme/constant.js';
   const varMap = {
     'primary': '$--color-primary',
     'success': '$--color-success',
