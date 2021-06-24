@@ -48,7 +48,7 @@ const registerRoute = (navConfig) => {
                             <div class="page-container page-component">
                                 <div class="page-component__content">
                                     <router-view class="content"></router-view>
-                                </div
+                                </div>
                             </div>
                         </el-scrollbar>`
             }),

@@ -10,7 +10,7 @@
         </div>
 
         <template v-if="data.children && data.children.length">
-            <ul class="list">
+            <ul v-if="isExpanded" class="list">
                 <NavBarItem v-for="item in data.children" :key="item[valueField]" :labelField="labelField" :valueField="valueField" :data="item" :deep="deep+1" @select="selectHandler"></NavBarItem>
             </ul>
         </template>
@@ -44,6 +44,11 @@ export default {
             default: 0,
         },
     },
+    data() {
+        return {
+            isExpanded: false,
+        };
+    },
     computed: {
         value() {
             return (_value, _max) => {
@@ -53,7 +58,11 @@ export default {
     },
     methods: {
         itemClickHandler(item) {
-            this.$emit("select", item[this.valueField], item, this);
+            if (item.children && item.children.length) {
+                this.isExpanded = !this.isExpanded;
+            } else {
+                this.$emit("select", item[this.valueField], item, this);
+            }
         },
         selectHandler(value, data, comp) {
             this.$emit("select", value, data, comp);
