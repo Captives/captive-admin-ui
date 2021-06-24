@@ -9,48 +9,48 @@
 :::demo 导航菜单默认为垂直模式，通过`mode`属性可以使导航菜单变更为水平模式。另外，在菜单中通过`submenu`组件可以生成二级菜单。Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 ```html
-<jr-menu :default-active="activeIndex" class="jr-menu-demo" mode="horizontal" @select="handleSelect">
-  <jr-menu-item index="1">处理中心</jr-menu-item>
-  <jr-submenu index="2">
+<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <el-menu-item index="1">处理中心</el-menu-item>
+  <el-submenu index="2">
     <template slot="title">我的工作台</template>
-    <jr-menu-item index="2-1">选项1</jr-menu-item>
-    <jr-menu-item index="2-2">选项2</jr-menu-item>
-    <jr-menu-item index="2-3">选项3</jr-menu-item>
-    <jr-submenu index="2-4">
+    <el-menu-item index="2-1">选项1</el-menu-item>
+    <el-menu-item index="2-2">选项2</el-menu-item>
+    <el-menu-item index="2-3">选项3</el-menu-item>
+    <el-submenu index="2-4">
       <template slot="title">选项4</template>
-      <jr-menu-item index="2-4-1">选项1</jr-menu-item>
-      <jr-menu-item index="2-4-2">选项2</jr-menu-item>
-      <jr-menu-item index="2-4-3">选项3</jr-menu-item>
-    </jr-submenu>
-  </jr-submenu>
-  <jr-menu-item index="3" disabled>消息中心</jr-menu-item>
-  <jr-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></jr-menu-item>
-</jr-menu>
+      <el-menu-item index="2-4-1">选项1</el-menu-item>
+      <el-menu-item index="2-4-2">选项2</el-menu-item>
+      <el-menu-item index="2-4-3">选项3</el-menu-item>
+    </el-submenu>
+  </el-submenu>
+  <el-menu-item index="3" disabled>消息中心</el-menu-item>
+  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+</el-menu>
 <div class="line"></div>
-<jr-menu
+<el-menu
   :default-active="activeIndex2"
-  class="jr-menu-demo"
+  class="el-menu-demo"
   mode="horizontal"
   @select="handleSelect"
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <jr-menu-item index="1">处理中心</jr-menu-item>
-  <jr-submenu index="2">
+  <el-menu-item index="1">处理中心</el-menu-item>
+  <el-submenu index="2">
     <template slot="title">我的工作台</template>
-    <jr-menu-item index="2-1">选项1</jr-menu-item>
-    <jr-menu-item index="2-2">选项2</jr-menu-item>
-    <jr-menu-item index="2-3">选项3</jr-menu-item>
-    <jr-submenu index="2-4">
+    <el-menu-item index="2-1">选项1</el-menu-item>
+    <el-menu-item index="2-2">选项2</el-menu-item>
+    <el-menu-item index="2-3">选项3</el-menu-item>
+    <el-submenu index="2-4">
       <template slot="title">选项4</template>
-      <jr-menu-item index="2-4-1">选项1</jr-menu-item>
-      <jr-menu-item index="2-4-2">选项2</jr-menu-item>
-      <jr-menu-item index="2-4-3">选项3</jr-menu-item>
-    </jr-submenu>
-  </jr-submenu>
-  <jr-menu-item index="3" disabled>消息中心</jr-menu-item>
-  <jr-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></jr-menu-item>
-</jr-menu>
+      <el-menu-item index="2-4-1">选项1</el-menu-item>
+      <el-menu-item index="2-4-2">选项2</el-menu-item>
+      <el-menu-item index="2-4-3">选项3</el-menu-item>
+    </el-submenu>
+  </el-submenu>
+  <el-menu-item index="3" disabled>消息中心</el-menu-item>
+  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+</el-menu>
 
 <script>
   export default {
@@ -74,91 +74,91 @@
 
 垂直菜单，可内嵌子菜单。
 
-:::demo 通过`jr-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
+:::demo 通过`el-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
 ```html
-<jr-row class="tac">
-  <jr-col :span="12">
+<el-row class="tac">
+  <el-col :span="12">
     <h5>默认颜色</h5>
-    <jr-menu
+    <el-menu
       default-active="2"
-      class="jr-menu-vertical-demo"
+      class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <jr-submenu index="1">
+      <el-submenu index="1">
         <template slot="title">
-          <i class="jr-icon-location"></i>
+          <i class="el-icon-location"></i>
           <span>导航一</span>
         </template>
-        <jr-menu-item-group>
+        <el-menu-item-group>
           <template slot="title">分组一</template>
-          <jr-menu-item index="1-1">选项1</jr-menu-item>
-          <jr-menu-item index="1-2">选项2</jr-menu-item>
-        </jr-menu-item-group>
-        <jr-menu-item-group title="分组2">
-          <jr-menu-item index="1-3">选项3</jr-menu-item>
-        </jr-menu-item-group>
-        <jr-submenu index="1-4">
+          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="1-2">选项2</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group title="分组2">
+          <el-menu-item index="1-3">选项3</el-menu-item>
+        </el-menu-item-group>
+        <el-submenu index="1-4">
           <template slot="title">选项4</template>
-          <jr-menu-item index="1-4-1">选项1</jr-menu-item>
-        </jr-submenu>
-      </jr-submenu>
-      <jr-menu-item index="2">
-        <i class="jr-icon-menu"></i>
+          <el-menu-item index="1-4-1">选项1</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
-      </jr-menu-item>
-      <jr-menu-item index="3" disabled>
-        <i class="jr-icon-document"></i>
+      </el-menu-item>
+      <el-menu-item index="3" disabled>
+        <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </jr-menu-item>
-      <jr-menu-item index="4">
-        <i class="jr-icon-setting"></i>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
-      </jr-menu-item>
-    </jr-menu>
-  </jr-col>
-  <jr-col :span="12">
+      </el-menu-item>
+    </el-menu>
+  </el-col>
+  <el-col :span="12">
     <h5>自定义颜色</h5>
-    <jr-menu
+    <el-menu
       default-active="2"
-      class="jr-menu-vertical-demo"
+      class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <jr-submenu index="1">
+      <el-submenu index="1">
         <template slot="title">
-          <i class="jr-icon-location"></i>
+          <i class="el-icon-location"></i>
           <span>导航一</span>
         </template>
-        <jr-menu-item-group>
+        <el-menu-item-group>
           <template slot="title">分组一</template>
-          <jr-menu-item index="1-1">选项1</jr-menu-item>
-          <jr-menu-item index="1-2">选项2</jr-menu-item>
-        </jr-menu-item-group>
-        <jr-menu-item-group title="分组2">
-          <jr-menu-item index="1-3">选项3</jr-menu-item>
-        </jr-menu-item-group>
-        <jr-submenu index="1-4">
+          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="1-2">选项2</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group title="分组2">
+          <el-menu-item index="1-3">选项3</el-menu-item>
+        </el-menu-item-group>
+        <el-submenu index="1-4">
           <template slot="title">选项4</template>
-          <jr-menu-item index="1-4-1">选项1</jr-menu-item>
-        </jr-submenu>
-      </jr-submenu>
-      <jr-menu-item index="2">
-        <i class="jr-icon-menu"></i>
+          <el-menu-item index="1-4-1">选项1</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
-      </jr-menu-item>
-      <jr-menu-item index="3" disabled>
-        <i class="jr-icon-document"></i>
+      </el-menu-item>
+      <el-menu-item index="3" disabled>
+        <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </jr-menu-item>
-      <jr-menu-item index="4">
-        <i class="jr-icon-setting"></i>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
-      </jr-menu-item>
-    </jr-menu>
-  </jr-col>
-</jr-row>
+      </el-menu-item>
+    </el-menu>
+  </el-col>
+</el-row>
 
 <script>
   export default {
@@ -179,46 +179,45 @@
 
 :::demo
 ```html
-<jr-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <jr-radio-button :label="false">展开</jr-radio-button>
-  <jr-radio-button :label="true">收起</jr-radio-button>
-  <!-- TODO 这里样式有问题 不影响使用 -->
-</jr-radio-group>
-<jr-menu default-active="1-4-1" class="jr-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-  <jr-submenu index="1">
+<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <el-radio-button :label="false">展开</el-radio-button>
+  <el-radio-button :label="true">收起</el-radio-button>
+</el-radio-group>
+<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <el-submenu index="1">
     <template slot="title">
-      <i class="jr-icon-location"></i>
+      <i class="el-icon-location"></i>
       <span slot="title">导航一</span>
     </template>
-    <jr-menu-item-group>
+    <el-menu-item-group>
       <span slot="title">分组一</span>
-      <jr-menu-item index="1-1">选项1</jr-menu-item>
-      <jr-menu-item index="1-2">选项2</jr-menu-item>
-    </jr-menu-item-group>
-    <jr-menu-item-group title="分组2">
-      <jr-menu-item index="1-3">选项3</jr-menu-item>
-    </jr-menu-item-group>
-    <jr-submenu index="1-4">
+      <el-menu-item index="1-1">选项1</el-menu-item>
+      <el-menu-item index="1-2">选项2</el-menu-item>
+    </el-menu-item-group>
+    <el-menu-item-group title="分组2">
+      <el-menu-item index="1-3">选项3</el-menu-item>
+    </el-menu-item-group>
+    <el-submenu index="1-4">
       <span slot="title">选项4</span>
-      <jr-menu-item index="1-4-1">选项1</jr-menu-item>
-    </jr-submenu>
-  </jr-submenu>
-  <jr-menu-item index="2">
-    <i class="jr-icon-menu"></i>
+      <el-menu-item index="1-4-1">选项1</el-menu-item>
+    </el-submenu>
+  </el-submenu>
+  <el-menu-item index="2">
+    <i class="el-icon-menu"></i>
     <span slot="title">导航二</span>
-  </jr-menu-item>
-  <jr-menu-item index="3" disabled>
-    <i class="jr-icon-document"></i>
+  </el-menu-item>
+  <el-menu-item index="3" disabled>
+    <i class="el-icon-document"></i>
     <span slot="title">导航三</span>
-  </jr-menu-item>
-  <jr-menu-item index="4">
-    <i class="jr-icon-setting"></i>
+  </el-menu-item>
+  <el-menu-item index="4">
+    <i class="el-icon-setting"></i>
     <span slot="title">导航四</span>
-  </jr-menu-item>
-</jr-menu>
+  </el-menu-item>
+</el-menu>
 
 <style>
-  .jr-menu-vertical-demo:not(.jr-menu--collapse) {
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
   }
@@ -238,7 +237,7 @@
       handleClose(key, keyPath) {
         console.log(key, keyPath);
       }
-    },
+    }
   }
 </script>
 ```

@@ -8,7 +8,7 @@
 
 ### 使用 Starter Kit
 
-我们提供了通用的[项目模板](https://github.com/ElementUI/element-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/ElementUI/element-in-laravjr-starter)，同样可以直接下载使用。
+我们提供了通用的[项目模板](https://github.com/ElementUI/element-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/ElementUI/element-in-laravel-starter)，同样可以直接下载使用。
 
 如果不希望使用我们提供的模板，请继续阅读。
 
@@ -38,12 +38,12 @@ new Vue({
 
 #### 按需引入
 
-借助 [babjr-plugin-component](https://github.com/QingWei-Li/babjr-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
+借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
 
-首先，安装 babjr-plugin-component：
+首先，安装 babel-plugin-component：
 
 ```bash
-npm install babjr-plugin-component -D
+npm install babel-plugin-component -D
 ```
 
 然后，将 .babelrc 修改为：

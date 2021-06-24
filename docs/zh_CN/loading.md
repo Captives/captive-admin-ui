@@ -2,6 +2,64 @@
 
 加载数据时显示动效。
 
+### 区域加载
+
+在表格等容器中加载数据时显示。
+
+:::demo Element 提供了两种调用 Loading 的方法：指令和服务。对于自定义指令`v-loading`，只需要绑定`Boolean`即可。默认状况下，Loading 遮罩会插入到绑定元素的子节点，通过添加`body`修饰符，可以使遮罩插入至 DOM 中的 body 上。
+```html
+<template>
+  <el-table
+    v-loading="loading"
+    :data="tableData"
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="姓名"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="地址">
+    </el-table-column>
+  </el-table>
+</template>
+
+<style>
+  body {
+    margin: 0;
+  }
+</style>
+
+<script>
+  export default {
+    data() {
+      return {
+        tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }],
+        loading: true
+      };
+    }
+  };
+</script>
+```
+:::
 
 ### 自定义
 
@@ -10,27 +68,28 @@
 :::demo 在绑定了`v-loading`指令的元素上添加`element-loading-text`属性，其值会被渲染为加载文案，并显示在加载图标的下方。类似地，`element-loading-spinner`和`element-loading-background`属性分别用来设定图标类名和背景色值。
 ```html
 <template>
-  <jr-table
+  <el-table
     v-loading="loading"
-    element-loading-spinner="jr-icon-loading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     :data="tableData"
     style="width: 100%">
-    <jr-table-column
+    <el-table-column
       prop="date"
       label="日期"
       width="180">
-    </jr-table-column>
-    <jr-table-column
+    </el-table-column>
+    <el-table-column
       prop="name"
       label="姓名"
       width="180">
-    </jr-table-column>
-    <jr-table-column
+    </el-table-column>
+    <el-table-column
       prop="address"
       label="地址">
-    </jr-table-column>
-  </jr-table>
+    </el-table-column>
+  </el-table>
 </template>
 
 <script>
@@ -66,17 +125,17 @@
 
 ```html
 <template>
-  <jr-button
+  <el-button
     type="primary"
     @click="openFullScreen1"
     v-loading.fullscreen.lock="fullscreenLoading">
     指令方式
-  </jr-button>
-  <jr-button
+  </el-button>
+  <el-button
     type="primary"
     @click="openFullScreen2">
     服务方式
-  </jr-button>
+  </el-button>
 </template>
 
 <script>
@@ -97,7 +156,7 @@
         const loading = this.$loading({
           lock: true,
           text: 'Loading',
-          spinner: 'jr-icon-loading',
+          spinner: 'el-icon-loading',
           background: 'rgba(0, 0, 0, 0.7)'
         });
         setTimeout(() => {

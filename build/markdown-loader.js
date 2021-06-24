@@ -1,9 +1,11 @@
-var hljs = require("highlight.js");
-var descriptionHTML = '';
-var cheerio = require("cheerio");
-var markdown = require("markdown-it");
-var componentIndex = 0;
 var path = require("path");
+var markdown = require("markdown-it");
+var hljs = require("highlight.js");
+var cheerio = require("cheerio");
+
+var componentIndex = 0;
+var descriptionHTML = '';
+
 var renderHighlight = function(str, lang) {
     if (!(lang && hljs.getLanguage(lang))) {
         return "";
@@ -21,9 +23,6 @@ var renderMd = function(html, fileName) {
     let componenetsString = "";
     let id = 0;
     let styleStr = "";
-
-
-
 
     $("style").each((index, item) => {
         styleStr += $(item).html();
@@ -117,18 +116,15 @@ parser.renderer.rules.fence = (tokens, idx, options, env, self) => {
         prevToken &&
         prevToken.nesting === 1 &&
         prevToken.info.trim().match(/^demo\s*(.*)$/);
+
+
     if (token.info === "html" && isInDemoContainer) {
         return `${descriptionHTML}<div class="highlight" slot="highlight">
-					${defaultRender(tokens, idx, options, env, self)}
+					    ${defaultRender(tokens, idx, options, env, self)}
 				  </div>`;
     }
-    return `<div class="code-common">${defaultRender(
-        tokens,
-        idx,
-        options,
-        env,
-        self
-    )}</div>`;
+
+    return `<div class="code-common">${defaultRender(tokens, idx, options, env, self)}</div>`;
 };
 
 // 给table增加样式
@@ -156,12 +152,15 @@ parser.use(require("markdown-it-container"), "demo", {
         if (tokens[idx].nesting === 1) {
             const content =
                 tokens[idx + 1].type === "fence" ? tokens[idx + 1].content : "";
+            console.log('<<<', content);
+
             // 先把demo中的代码放到demo-block的之中，然后程序继续render fence，按照上面的fence规则渲染出代码部分，作为隐藏的查看代码。
             return `<demo-block><div class="demo-box">${content}</div>`;
         }
         return "</demo-block>";
     },
 });
+
 parser.use(require("markdown-it-container"), "warning", {}); // 格式化 warning 的
 parser.use(require("markdown-it-container"), "tip", {});
 

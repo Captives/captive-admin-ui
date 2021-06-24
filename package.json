@@ -18,6 +18,7 @@
     "scripts": {
         "init": "node build/create.js",
         "serve": "vue-cli-service serve",
+        "build:doc": "vue-cli-service build",
         "entry": "node build/entry.js",
         "lib": "vue-cli-service build --target lib --name captive-admin-ui --dest lib src/index.js",
         "build": "webpack --config build/webpack.conf.js",

@@ -7,11 +7,11 @@
 :::demo Progress 组件设置`percentage`属性即可，表示进度条对应的百分比，**必填**，必须在 0-100。通过 `format` 属性来指定进度条文字内容。
 
 ```html
-<jr-progress :percentage="50"></jr-progress>
-<jr-progress :percentage="100" :format="format"></jr-progress>
-<jr-progress :percentage="100" status="success"></jr-progress>
-<jr-progress :percentage="100" status="warning"></jr-progress>
-<jr-progress :percentage="50" status="exception"></jr-progress>
+<el-progress :percentage="50"></el-progress>
+<el-progress :percentage="100" :format="format"></el-progress>
+<el-progress :percentage="100" status="success"></el-progress>
+<el-progress :percentage="100" status="warning"></el-progress>
+<el-progress :percentage="50" status="exception"></el-progress>
 
 <script>
   export default {
@@ -32,10 +32,10 @@
 :::demo Progress 组件可通过 `stroke-width` 属性更改进度条的高度，并可通过 `text-inside` 属性来将进度条描述置于进度条内部。
 
 ```html
-<jr-progress :text-inside="true" :stroke-width="26" :percentage="70"></jr-progress>
-<jr-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></jr-progress>
-<jr-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></jr-progress>
-<jr-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></jr-progress>
+<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
+<el-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></el-progress>
+<el-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></el-progress>
+<el-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></el-progress>
 ```
 :::
 
@@ -46,16 +46,16 @@
 :::demo
 
 ```html
-<jr-progress :percentage="percentage" :color="customColor"></jr-progress>
+<el-progress :percentage="percentage" :color="customColor"></el-progress>
 
-<jr-progress :percentage="percentage" :color="customColorMethod"></jr-progress>
+<el-progress :percentage="percentage" :color="customColorMethod"></el-progress>
 
-<jr-progress :percentage="percentage" :color="customColors"></jr-progress>
+<el-progress :percentage="percentage" :color="customColors"></el-progress>
 <div>
-  <jr-button-group>
-    <jr-button icon="jr-icon-minus" @click="decrease"></jr-button>
-    <jr-button icon="jr-icon-plus" @click="increase"></jr-button>
-  </jr-button-group>
+  <el-button-group>
+    <el-button icon="el-icon-minus" @click="decrease"></el-button>
+    <el-button icon="el-icon-plus" @click="increase"></el-button>
+  </el-button-group>
 </div>
 
 <script>
@@ -108,11 +108,11 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo
 
 ```html
-<jr-progress type="circle" :percentage="0"></jr-progress>
-<jr-progress type="circle" :percentage="25"></jr-progress>
-<jr-progress type="circle" :percentage="100" status="success"></jr-progress>
-<jr-progress type="circle" :percentage="70" status="warning"></jr-progress>
-<jr-progress type="circle" :percentage="50" status="exception"></jr-progress>
+<el-progress type="circle" :percentage="0"></el-progress>
+<el-progress type="circle" :percentage="25"></el-progress>
+<el-progress type="circle" :percentage="100" status="success"></el-progress>
+<el-progress type="circle" :percentage="70" status="warning"></el-progress>
+<el-progress type="circle" :percentage="50" status="exception"></el-progress>
 ```
 :::
 
@@ -122,12 +122,12 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 
 ```html
 
-<jr-progress type="dashboard" :percentage="percentage" :color="colors"></jr-progress>
+<el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
 <div>
-  <jr-button-group>
-    <jr-button icon="jr-icon-minus" @click="decrease"></jr-button>
-    <jr-button icon="jr-icon-plus" @click="increase"></jr-button>
-  </jr-button-group>
+  <el-button-group>
+    <el-button icon="el-icon-minus" @click="decrease"></el-button>
+    <el-button icon="el-icon-plus" @click="increase"></el-button>
+  </el-button-group>
 </div>
 
 <script>

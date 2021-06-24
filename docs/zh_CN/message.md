@@ -10,8 +10,8 @@
 
 ```html
 <template>
-  <jr-button :plain="true" @click="open">打开消息提示</jr-button>
-  <jr-button :plain="true" @click="openVn">VNode</jr-button>
+  <el-button :plain="true" @click="open">打开消息提示</el-button>
+  <el-button :plain="true" @click="openVn">VNode</el-button>
 </template>
 
 <script>
@@ -20,6 +20,7 @@
       open() {
         this.$message('这是一条消息提示');
       },
+
       openVn() {
         const h = this.$createElement;
         this.$message({
@@ -42,10 +43,10 @@
 :::demo 当需要自定义更多属性时，Message 也可以接收一个对象为参数。比如，设置`type`字段可以定义不同的状态，默认为`info`。此时正文内容以`message`的值传入。同时，我们也为 Message 的各种 type 注册了方法，可以在不传入`type`字段的情况下像`open4`那样直接调用。
 ```html
 <template>
-  <jr-button :plain="true" @click="open2">成功</jr-button>
-  <jr-button :plain="true" @click="open3">警告</jr-button>
-  <jr-button :plain="true" @click="open1">消息</jr-button>
-  <jr-button :plain="true" @click="open4">错误</jr-button>
+  <el-button :plain="true" @click="open2">成功</el-button>
+  <el-button :plain="true" @click="open3">警告</el-button>
+  <el-button :plain="true" @click="open1">消息</el-button>
+  <el-button :plain="true" @click="open4">错误</el-button>
 </template>
 
 <script>
@@ -84,10 +85,10 @@
 :::demo 默认的 Message 是不可以被人工关闭的，如果需要可手动关闭的 Message，可以使用`showClose`字段。此外，和 Notification 一样，Message 拥有可控的`duration`，设置`0`为不会被自动关闭，默认为 3000 毫秒。
 ```html
 <template>
-  <jr-button :plain="true" @click="open1">消息</jr-button>
-  <jr-button :plain="true" @click="open2">成功</jr-button>
-  <jr-button :plain="true" @click="open3">警告</jr-button>
-  <jr-button :plain="true" @click="open4">错误</jr-button>
+  <el-button :plain="true" @click="open1">消息</el-button>
+  <el-button :plain="true" @click="open2">成功</el-button>
+  <el-button :plain="true" @click="open3">警告</el-button>
+  <el-button :plain="true" @click="open4">错误</el-button>
 </template>
 
 <script>
@@ -96,7 +97,7 @@
       open1() {
         this.$message({
           showClose: true,
-          message: '这是一条消息提示',
+          message: '这是一条消息提示'
         });
       },
 
@@ -112,7 +113,7 @@
         this.$message({
           showClose: true,
           message: '警告哦，这是一条警告消息',
-          type: 'warning',
+          type: 'warning'
         });
       },
 
@@ -120,7 +121,7 @@
         this.$message({
           showClose: true,
           message: '错了哦，这是一条错误消息',
-          type: 'error',
+          type: 'error'
         });
       }
     }
@@ -136,7 +137,7 @@
 
 ```html
 <template>
-  <jr-button :plain="true" @click="openCenter">文字居中</jr-button>
+  <el-button :plain="true" @click="openCenter">文字居中</el-button>
 </template>
 
 <script>
@@ -161,7 +162,7 @@
 
 ```html
 <template>
-  <jr-button :plain="true" @click="openHTML">使用 HTML 片段</jr-button>
+  <el-button :plain="true" @click="openHTML">使用 HTML 片段</el-button>
 </template>
 
 <script>

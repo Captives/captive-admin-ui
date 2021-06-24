@@ -7,20 +7,17 @@
 :::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
 
 ```html
-<jr-switch
+<el-switch
   v-model="value"
   active-color="#13ce66"
   inactive-color="#ff4949">
-</jr-switch>
-<jr-switch
-  v-model="value2">
-</jr-switch>
+</el-switch>
+
 <script>
   export default {
     data() {
       return {
-        value: true,
-        value2: true
+        value: true
       }
     }
   };
@@ -33,19 +30,19 @@
 :::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
 ```html
-<jr-switch
+<el-switch
   v-model="value1"
   active-text="按月付费"
   inactive-text="按年付费">
-</jr-switch>
-<jr-switch
+</el-switch>
+<el-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
   inactive-color="#ff4949"
   active-text="按月付费"
   inactive-text="按年付费">
-</jr-switch>
+</el-switch>
 
 <script>
   export default {
@@ -65,15 +62,15 @@
 :::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
 
 ```html
-<jr-tooltip :content="'Switch value: ' + value" placement="top">
-  <jr-switch
+<el-tooltip :content="'Switch value: ' + value" placement="top">
+  <el-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0">
-  </jr-switch>
-</jr-tooltip>
+  </el-switch>
+</el-tooltip>
 
 <script>
   export default {
@@ -94,14 +91,14 @@
 
 
 ```html
-<jr-switch
+<el-switch
   v-model="value1"
   disabled>
-</jr-switch>
-<jr-switch
+</el-switch>
+<el-switch
   v-model="value2"
   disabled>
-</jr-switch>
+</el-switch>
 <script>
   export default {
     data() {

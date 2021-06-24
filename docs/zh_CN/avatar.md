@@ -9,26 +9,26 @@
 :::demo
 ```html
 <template>
-  <jr-row class="demo-avatar demo-basic">
-    <jr-col :span="12">
+  <el-row class="demo-avatar demo-basic">
+    <el-col :span="12">
       <div class="sub-title">circle</div>
       <div class="demo-basic--circle">
-        <div class="block"><jr-avatar :size="50" :src="circleUrl"></jr-avatar></div>
+        <div class="block"><el-avatar :size="50" :src="circleUrl"></el-avatar></div>
         <div class="block" v-for="size in sizeList" :key="size">
-          <jr-avatar :size="size" :src="circleUrl"></jr-avatar>
+          <el-avatar :size="size" :src="circleUrl"></el-avatar>
         </div>
       </div>
-    </jr-col>  
-    <jr-col :span="12">
+    </el-col>  
+    <el-col :span="12">
       <div class="sub-title">square</div>
       <div class="demo-basic--circle">
-        <div class="block"><jr-avatar shape="square" :size="50" :src="squareUrl"></jr-avatar></div>
+        <div class="block"><el-avatar shape="square" :size="50" :src="squareUrl"></el-avatar></div>
         <div class="block" v-for="size in sizeList" :key="size">
-          <jr-avatar shape="square" :size="size" :src="squareUrl"></jr-avatar>
+          <el-avatar shape="square" :size="size" :src="squareUrl"></el-avatar>
         </div>
       </div>
-    </jr-col> 
-  </jr-row>
+    </el-col> 
+  </el-row>
 </template>
 <script>
   export default {
@@ -54,13 +54,13 @@
 <template>
   <div class="demo-type">
     <div>
-      <jr-avatar icon="jr-icon-user-solid"></jr-avatar>
+      <el-avatar icon="el-icon-user-solid"></el-avatar>
     </div>
     <div>
-      <jr-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></jr-avatar>
+      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
     </div>
     <div>
-      <jr-avatar> user </jr-avatar>
+      <el-avatar> user </el-avatar>
     </div>
   </div>
 </template>
@@ -75,9 +75,9 @@
 ```html
 <template>
   <div class="demo-type">
-    <jr-avatar :size="60" src="https://empty" @error="errorHandler">
+    <el-avatar :size="60" src="https://empty" @error="errorHandler">
       <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-    </jr-avatar>
+    </el-avatar>
   </div>
 </template>
 <script>
@@ -103,7 +103,7 @@
   <div class="demo-fit">
     <div class="block" v-for="fit in fits" :key="fit">
         <span class="title">{{ fit }}</span>
-        <jr-avatar shape="square" :size="100" :fit="fit" :src="url"></jr-avatar>
+        <el-avatar shape="square" :size="100" :fit="fit" :src="url"></el-avatar>
     </div>
   </div>
 </template>

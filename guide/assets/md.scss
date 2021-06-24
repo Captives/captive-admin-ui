@@ -1,0 +1,31 @@
+// markdown文件的补充样式
+//todo：h3+table这样写样式是临时写法，table是说明表格
+h3+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+  th {
+    white-space: nowrap;
+    text-align: left;
+    color: #666;
+    font-weight: 400;
+  }
+  th,
+  td {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 15px;
+    max-width: 250px;
+  }
+  td {
+    color: #333;
+  }
+}
+section p {
+  line-height: 1.5em;
+}
+section h3 {
+  margin: 55px 0 20px;
+}
