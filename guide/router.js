@@ -27,6 +27,12 @@ let routes = [{
         component: () =>
             import ("./views/Home.vue"),
     }]
+}, {
+    path: "/editer-from",
+    icon: "el-icon-hot-water",
+    name: "编辑器",
+    component: () =>
+        import ("./views/EditerFrom.vue")
 }];
 
 import docs from './../docs/index.json';

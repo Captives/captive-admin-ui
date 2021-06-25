@@ -1,25 +1,26 @@
 <template>
-    <!-- <jr-fullscreen id="app" v-model="fullscreen" @change="fullChangeHandler"> -->
-    <el-container id="app">
-        <div class="sidebar">
-            <NavBar :data="list" slot="sidebar" label-field="name" value-field="path" @change="navChangeHandler">
-                <!-- <jr-button v-if="!fullscreen" type="warning" @click.native="changeHandler(true)">进入全屏</jr-button>
-                <jr-button v-if="fullscreen" type="danger" @click.native="changeHandler(false)">退出全屏</jr-button> -->
-            </NavBar>
+    <el-fullscreen id="app" v-model="fullscreen" @change="fullChangeHandler">
+        <el-container id="app">
+            <div class="sidebar">
+                <NavBar :data="list" slot="sidebar" label-field="name" value-field="path" @change="navChangeHandler">
+                    <el-button v-if="!fullscreen" type="warning" @click.native="changeHandler(true)">进入全屏</el-button>
+                    <el-button v-if="fullscreen" type="danger" @click.native="changeHandler(false)">退出全屏</el-button>
+                    <el-divider> 路由导航 </el-divider>
+                </NavBar>
 
-            <Siderbar v-for="(item,lang) in docs" :key="lang" :lang="lang" :data="item"></Siderbar>
-        </div>
-        <el-main>
-            <router-view></router-view>
-        </el-main>
-    </el-container>
-    <!-- </jr-fullscreen> -->
+                <Siderbar v-for="(item,lang) in docs" :key="lang" :lang="lang" :data="item"></Siderbar>
+            </div>
+            <el-main>
+                <router-view></router-view>
+            </el-main>
+        </el-container>
+    </el-fullscreen>
 </template>
 
 <script>
 import router from "./router";
-import NavBar from "./views/nav-bar/NavBar.vue";
-import Siderbar from "./views/Sidebar.vue";
+import NavBar from "./components/nav-bar/NavBar.vue";
+import Siderbar from "./components/Sidebar.vue";
 import docs from "./../docs/index.json";
 console.log(docs);
 export default {
@@ -67,6 +68,7 @@ body,
     left: 0;
     right: 0;
     bottom: 0;
+    background: #fff;
 }
 .el-container {
     height: 100%;

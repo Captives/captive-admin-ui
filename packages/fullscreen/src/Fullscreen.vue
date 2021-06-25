@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: "JrFullscreen",
+    name: "ElFullscreen",
     props: {
         value: {
             type: Boolean,

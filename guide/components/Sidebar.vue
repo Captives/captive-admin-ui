@@ -1,6 +1,6 @@
 <template>
     <div class="side-nav" @mouseenter="isFade = false" :class="{ 'is-fade': isFade }" :style="navStyle">
-        {{lang}}
+        <el-divider> {{lang}}</el-divider>
         <ul>
             <li class="nav-item" v-for="(item, key) in data" :key="key">
                 <a v-if="!item.path && !item.href" @click="expandMenu">{{item.name}}</a>

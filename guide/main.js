@@ -3,6 +3,10 @@ import Main from './Main.vue'
 import router from './router';
 
 
+import FullScreen from './../packages/fullscreen';
+console.log('FullScreen', FullScreen);
+Vue.use(FullScreen);
+
 //源码(开发时使用)
 // import "../packages/theme/src/index.scss";
 // import AdminUI from '../src';
