@@ -56,7 +56,6 @@
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
         "babel-regenerator-runtime": "^6.5.0",
-        "element-theme-chalk": "git clone https://github.com/ElementUI/theme-chalk.git",
         "fs-extra": "^10.0.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
