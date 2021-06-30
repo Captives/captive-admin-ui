@@ -33,6 +33,12 @@ let routes = [{
     name: "编辑器",
     component: () =>
         import ("./views/EditerFrom.vue")
+}, {
+    path: "/tile",
+    icon: "el-icon-hot-water",
+    name: "流式布局",
+    component: () =>
+        import ("./views/Tile.vue")
 }];
 
 import docs from './../docs/index.json';

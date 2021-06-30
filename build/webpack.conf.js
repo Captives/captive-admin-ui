@@ -9,7 +9,7 @@ module.exports = {
         publicPath: '/',
         filename: 'index.js',
         libraryTarget: 'umd',
-        library: 'captives-admin-ui',
+        library: 'captives-admin-ui', //library运行在浏览器中的
         umdNamedDefine: true,
         globalObject: 'typeof self !== \'undefined\' ? self : this',
     },

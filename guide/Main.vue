@@ -54,10 +54,10 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "./demo-styles/index.scss";
-@import "./assets/styles/bass.scss";
-@import "./assets/styles/hljs.scss";
-@import "./assets/styles/md.scss";
+@import "~/demo-styles/index.scss";
+@import "~/assets/styles/bass.scss";
+@import "~/assets/styles/hljs.scss";
+@import "~/assets/styles/md.scss";
 </style>
 <style lang="scss" scoped>
 html,
@@ -84,6 +84,8 @@ body,
     }
 
     .el-main {
+        // width: 0;
+        flex: 1;
         ::v-deep .page-component__scroll {
             overflow-y: auto;
             height: 100%;

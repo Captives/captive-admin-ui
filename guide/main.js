@@ -11,8 +11,8 @@ Vue.use(FullScreen);
 // import "../packages/theme/src/index.scss";
 // import AdminUI from '../src';
 
-import AdminUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+// import AdminUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
 
 // 引入demo-block
 // import DemoBlock from "./views/DemoBlock.vue";
@@ -23,7 +23,7 @@ import icon from './assets/icon.json';
 Vue.prototype.$icon = icon; // Icon 列表页用
 
 //全体注册
-Vue.use(AdminUI, { size: 'small' });
+// Vue.use(AdminUI, { size: 'small' });
 
 
 
