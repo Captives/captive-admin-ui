@@ -1,11 +1,12 @@
-const Config = require('markdown-it-chain');
+const path = require('path');
 const anchorPlugin = require('markdown-it-anchor');
+const Config = require('markdown-it-chain');
 const slugify = require('transliteration').slugify;
-const containers = require('./md-container');
-const overWriteFenceRule = require('./md-fence');
 const compiler = require('vue-template-compiler');
 const { compileTemplate } = require('@vue/component-compiler-utils');
-const path = require('path');
+
+const containers = require('./md-container');
+const overWriteFenceRule = require('./md-fence');
 
 const config = new Config();
 config.options.html(true).end()

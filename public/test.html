@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var data = {};
+        for (var i = 0; i < 10; i++) {
+            data[Symbol(i)] = i;
+        }
+        console.log(data);
+        console.log(Object.keys(data));
+
+        console.log(Reflect.ownKeys(data));
+        console.log(Object.getOwnPropertySymbols(data));
+
+        Reflect.ownKeys(data).forEach(key => {
+            console.log(key, data[key]);
+        })
+    </script>
+</body>
+
+</html>

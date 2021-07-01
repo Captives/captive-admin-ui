@@ -12,6 +12,11 @@ const template = {
             placeholder: "请输入姓名",
             clearable: true,
         },
+        listeners: {
+            input: (value) => {
+                console.log('input change', value);
+            }
+        }
     },
     tag: {
         tag: "el-tag",
@@ -47,7 +52,6 @@ const template = {
             value: 6,
             max: 10,
         },
-
     },
     avatar: {
         tag: "el-avatar",
